@@ -10,6 +10,9 @@ import { Home } from "./pages/Home";
 import { ContactList } from "./pages/ContactList.jsx";
 import { ContactEdit } from "./pages/ContactEdit.jsx";
 import { ContactAdd } from "./pages/ContactAdd.jsx";
+import { StarWarsCharacters } from "./pages/StarWarsCharacters.jsx";
+import { StarWarsHome } from "./pages/StarWarsHome.jsx";
+import { StarWarsDetails } from "./pages/StarWarsDetails.jsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +30,9 @@ export const router = createBrowserRouter(
       <Route path="/contact-edit" element={<ContactEdit />} />
       <Route path="/contact-list" element={<ContactList />} />
       <Route path="/contact-add" element={<ContactAdd />} />
+      <Route path="/star-wars-characters" element={<StarWarsCharacters />} />
+      <Route path="/star-wars-home" element={<StarWarsHome />} />
+      <Route path="/star-wars-details" element={<StarWarsDetails />} />
     </Route>
   )
 );

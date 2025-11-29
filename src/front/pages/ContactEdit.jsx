@@ -5,7 +5,7 @@ export const ContactEdit = () => {
         <>
             {/* Edit contact form */}
             <div className="container-fluid d-flex flex-column justify-content-center align-items-center pt-5 col-12 col-sm-6 col-md-6 col-lg-8">
-                <h1 className="pb-2">Edit Contact:</h1>
+                <h1 className="pb-2" style={{color: "yellow"}}>Edit Contact:</h1>
                 <form>
                     {/* full name input */}
                     <div className="input-group mb-3">
@@ -28,7 +28,7 @@ export const ContactEdit = () => {
                         <input type="text" aria-label="Street address" className="form-control" />
                     </div>
                     {/* submit button */}
-                    <button className="btn btn-primary">Save</button>
+                    <button className="btn btn-outline-primary">Save</button>
                 </form>
             </div>
         </>

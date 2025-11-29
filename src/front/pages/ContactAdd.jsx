@@ -22,6 +22,10 @@ export const ContactAdd = () => {
         }
         const data = await response.json()
         console.log(data);
+        dispatch({
+            type: "load-contacts",
+            payload: data
+        });
     }
 
     const createContactPost = async () => {
@@ -48,7 +52,7 @@ export const ContactAdd = () => {
             "slug": store.slug,
             "id": ""
         };
-        const response = await fetch(`${store.host}/agendas/${store.slug}/contacts`, {
+        const response = await fetch(`${store.host}/agendas/${store.slug}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
@@ -61,15 +65,15 @@ export const ContactAdd = () => {
         console.log(data);
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        createContactPost();
-        navigate("/")
-
+        await createContactPost();
+        navigate("/contact-list");
     };
+
     useEffect(() => {
-        createAgendaPost()
         getAgenda()
+        createAgendaPost()
     }, [])
 
 
@@ -77,30 +81,30 @@ export const ContactAdd = () => {
         <>
             {/* Add contact form */}
             <div className="container-fluid d-flex flex-column justify-content-center align-items-center pt-5 col-12 col-sm-6 col-md-6 col-lg-8">
-                <h1 className="pb-2">Add Contact:</h1>
+                <h1 className="pb-2" style={{ color: "yellow" }}>Add Contact:</h1>
                 <form onSubmit={handleSubmit}>
                     {/* full name input */}
                     <div className="input-group mb-3">
                         <span className="input-group-text">Full name:</span>
-                        <input value={name} onChange={(e) => setName(e.target.value)} type="text" aria-label="First name" className="form-control" />
+                        <input value={name} onChange={(event) => setName(event.target.value)} type="text" aria-label="First name" className="form-control" />
                     </div>
                     {/* email input */}
                     <div className="input-group mb-3">
                         <span className="input-group-text">Email:</span>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" aria-label="Email address" className="form-control" />
+                        <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" aria-label="Email address" className="form-control" />
                     </div>
                     {/* phone input */}
                     <div className="input-group mb-3">
                         <span className="input-group-text">Phone:</span>
-                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" aria-label="Phone number" className="form-control" />
+                        <input value={phone} onChange={(event) => setPhone(event.target.value)} type="tel" aria-label="Phone number" className="form-control" />
                     </div>
                     {/* address input */}
                     <div className="input-group mb-3">
                         <span className="input-group-text">Address:</span>
-                        <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" aria-label="Street address" className="form-control" />
+                        <input value={address} onChange={(event) => setAddress(event.target.value)} type="text" aria-label="Street address" className="form-control" />
                     </div>
                     {/* submit button */}
-                    <button type="submit" className="btn btn-primary">Save</button>
+                    <button type="submit" className="btn btn-outline-primary">Save</button>
                 </form>
             </div>
         </>
