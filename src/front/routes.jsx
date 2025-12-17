@@ -13,6 +13,10 @@ import { ContactAdd } from "./pages/ContactAdd.jsx";
 import { StarWarsCharacters } from "./pages/StarWarsCharacters.jsx";
 import { StarWarsHome } from "./pages/StarWarsHome.jsx";
 import { StarWarsDetails } from "./pages/StarWarsDetails.jsx";
+import { StarWarsPlanets } from "./pages/StarWarsPlanets.jsx";
+import { StarWarsPlanetDetails } from "./pages/StarWarsPlanetDetails.jsx";
+import { StarWarsStarships } from "./pages/StarWarsStarships.jsx";
+import { StarWarsStarshipDetails } from "./pages/StarWarsStarshipDetails.jsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,6 +37,10 @@ export const router = createBrowserRouter(
       <Route path="/star-wars-characters" element={<StarWarsCharacters />} />
       <Route path="/star-wars-home" element={<StarWarsHome />} />
       <Route path="/star-wars-details" element={<StarWarsDetails />} />
+      <Route path="/star-wars-planets" element={<StarWarsPlanets />} />
+      <Route path="/star-wars-planet-details" element={<StarWarsPlanetDetails />} />
+      <Route path="/star-wars-starships" element={<StarWarsStarships />} />
+      <Route path="/star-wars-starship-details" element={<StarWarsStarshipDetails />} />
     </Route>
   )
 );
