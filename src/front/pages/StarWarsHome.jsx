@@ -25,6 +25,7 @@ export const StarWarsHome = () => {
                 <Link to="/star-wars-planets" className="btn btn-outline-warning text-warning">Planets</Link>
                 <Link to="/star-wars-characters" className="btn btn-outline-warning text-warning">Characters</Link>
                 <Link to="/contact-list" className="btn btn-outline-warning text-warning">Contacts</Link>
+                <Link to="/star-wars-login" className="btn btn-outline-success text-success">Log in</Link>
                 <div className="btn-group">
                     <button className="btn btn-outline-danger" type="button">
                         Favorites ({store.favorites.length})
